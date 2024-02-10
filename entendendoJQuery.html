@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        // Animação
+        // Esconde, mostra, apaga
+        $('div').hide(5000).show(5000).fadeOut(5000);
+
+        // O seletor acima retorna uma lista de objetos da dom
+
+        // Método get
+        // Retorna a div (objeto da dom) (a primeira)
+        console.log($('div').get(0));
+
+        // Utilitário. Verifica se é objeto vazio
+        console.log($.isEmptyObject({}));
+
+        // Utilitário. Verifica Se o array contém
+        console.log($.inArray(3, [1, 2, 3]))
+
+        // Inserir uma função dentro do contexto do JQuery
+        $.fn.fundoVerde = function(){
+            // A função css é do próprio jquery
+            this.css('background-color', 'green');
+            return this // Retorna o próprio objeto para que seja possível encadear outras funções
+        }
+
+        // Agora a função existe dentro do JQuery
+        //$('body').fundoVerde().fadeOut(5000)
+    </script>
+</body>

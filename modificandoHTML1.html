@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #01</h1>
+    <div id='conteudo1'></div>
+    <div id='conteudo2'></div>
+    <div id='conteudo3'></div>
+
+    <script>
+        // inserindo tags dentro do html
+        $('#conteudo1').append('<p>1</p>')
+
+        const elementos = [
+            $('<li></li>').append('Arroz'),
+            $('<li>').append('Feijão'),
+            $('<li>').append('Carne')
+        ]
+
+        // Adiciona Sorvete no id=conteudo2
+        const lista = $('<ul><li>Sorvete</li></ul>').append(elementos)
+        $('#conteudo2').append(lista)
+
+        $('#conteudo3').append('<h1>1</h1>', '<h1>2</h1>')
+        
+        // A função html substitui o conteudo
+        $('#conteudo3').html('<h1>123</h1>')
+        
+        // A função text apenas insere o texto, mesmo que seja html
+        $('#conteudo3').text('<h1>123</h1>')
+    </script>
+</body>
